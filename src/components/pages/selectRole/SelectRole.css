@@ -1,0 +1,22 @@
+.select-role-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+    width: 80%;
+    height: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    justify-content: space-between;
+    
+}
+.roles-container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 400px;
+}

@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ReactDOM from "react-dom/client";
+import "./components/loginForm/LoginForm.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginForm from "./components/loginForm/LoginForm.js";
+import SelectRole from "./components/pages/selectRole/SelectRole.js";
+import Navbar from "./components/navigation/navbar";
+import MainPage from "./components/pages/homepage/main";
+import Delegates from "./components/pages/delegates/delegates";
+import MediaPartners from "./components/pages/media-partners/MediaPartners";
+import Exhibitors from "./components/pages/Exhibitor/Exhibitor";
+import Sponsors from "./components/pages/sponsors/Sponsors";
+import Partners from "./components/pages/partners/Partners";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="login" element={<LoginForm />} />
+          <Route path="selectRole" element={<SelectRole />} />
+          <Route path="/" element={<Navbar />}>
+            <Route path="dashboard" element={<MainPage />} />
+
+            <Route path="delegates" element={<Delegates />} />
+            <Route path="media-partners" element={<MediaPartners />} />
+            <Route path="exhibitors" element={<Exhibitors />} />
+            <Route path="sponsors" element={<Sponsors />} />
+            <Route path="partners" element={<Partners />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
